@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+
+.search-form {
+	
+}
+
+.keyword-label-div {	
+	border: 1px solid;
+	float:none;
+	height:25% ;
+	width:100%;
+	margin-top: 0.2em 
+}
+
+.keyword-input-div {
+	border: 1px solid;
+	float:none;
+	height:25% ;
+	width:100%;
+}
+
+
+.search-div {
+	width: 30%;
+	border: 1px solid;
+	height: 100%;
+	float:left;
+	margin-left:10px
+		
+}
+
+.keyword-input-text {
+	font-size: 1.5em
+}
+
+

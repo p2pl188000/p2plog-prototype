@@ -3,12 +3,18 @@
 <%@ page session="false"%>
 <html>
 <head>
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" />
-	<script type="text/javascript" src="<c:url value="/resources/jquery/jquery-1.9.0.min.js" />"></script>
+	<!--  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/le-frog/jquery-ui.css" /> -->
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" /> 
+	<!--  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/cupertino/jquery-ui.css" /> --> 
+	
+	 
+	<link rel="stylesheet"  type="text/css"  href="resources/css/p2p.css" />
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.js"></script>
 	<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
 	<META http-equiv=Content-Type content="text/html; charset=UTF-8">
 	<title>点对点</title>
 	<script>
+	console.log("hello");
   	$(function() {
   		console.log("about to call tab");
     	$( "#search-tab" ).tabs();
@@ -21,33 +27,41 @@
 		<p>top-bar, language selection, login button etc.</p>
 	</div>
 	<div id="header"
-		style="width: 100%; height: 124px; background-color: #075F20; position: relative; z-index: 99">
+		style="width: 100%; height: 124px; background-color: rgb(239, 248, 241); position: relative; z-index: 99">
 		<div class="content">
 			<div id="vertical-spacer" style="height: 19px; display: block"></div>
-			<div id="logo" style="margin-left: 20%;">
-				<img alt="p2plogistics" src="resources/images/qiao.jpg">
-			</div>
 		</div>
 	</div>
 	<div id="body"
-		style="width: 60%; border: solid; margin-left: auto; margin-right: auto; display: block; overflow-y: auto; height: 800px; border-width: 1px;z-index: 99">
-		点对点物流
-		<div id="search-tab" style="margin-top:100px;">
+		style="width: 800px; border: solid; margin-left: 30%; margin-right: auto; display: block; overflow-y: auto; height: 800px; border-width: 1px;z-index: 99">
+		<div id="search-tab">
 			<ul>
 				<li><a href="#tabs-1">Nunc tincidunt</a></li>
 				<li><a href="#tabs-2">Proin dolor</a></li>
 				<li><a href="#tabs-3">Aenean lacinia</a></li>
 			</ul>
-			<div id="tabs-1">
-				<p>Proin elit arcu, rutrum commodo, vehicula tempus, commodo a,
-					risus. Curabitur nec arcu. Donec sollicitudin mi sit amet mauris.
-					Nam elementum quam ullamcorper ante. Etiam aliquet massa et lorem.
-					Mauris dapibus lacus auctor risus. Aenean tempor ullamcorper leo.
-					Vivamus sed magna quis ligula eleifend adipiscing. Duis orci.
-					Aliquam sodales tortor vitae ipsum. Aliquam nulla. Duis aliquam
-					molestie erat. Ut et mauris vel pede varius sollicitudin. Sed ut
-					dolor nec orci tincidunt interdum. Phasellus ipsum. Nunc tristique
-					tempus lectus.</p>
+			<div id="tabs-1" style="height: 250px;font-size: 1.3em" >
+				
+					<div  id="keyword-search" class="search-div">
+						<div id="keyword-label-div" class="keyword-label-div">
+							<div class="label-text" style="border: 1px solid; height: 80%" >
+								<label>Keyword(关键字)</label>
+							</div>
+						</div>
+						
+						<div id="keyword-input-div" class="keyword-input-div">
+							<input type="text" id="country-input" style="font-size: 1.3em;width: 90%"></input>
+						</div>
+					</div>		
+					<div  id="search-from" class="search-div">
+					
+					</div>
+					
+					<div id="search-to" class="search-div">
+					
+					</div>	
+					
+				
 			</div>
 			<div id="tabs-2">
 				<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus
