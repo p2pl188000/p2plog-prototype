@@ -3,23 +3,22 @@
 <%@ page session="false"%>
 <html>
 <head>
-	<!--  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/le-frog/jquery-ui.css" /> -->
-	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" /> 
-	<!--  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/cupertino/jquery-ui.css" /> --> 
-	
-	 
-	<link rel="stylesheet"  type="text/css"  href="resources/css/p2p.css" />
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.0.js"></script>
-	<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
-	<META http-equiv=Content-Type content="text/html; charset=UTF-8">
-	<title>点对点</title>
-	<script>
-	console.log("hello");
-  	$(function() {
-  		console.log("about to call tab");
-    	$( "#search-tab" ).tabs();
-  	});
-  </script>
+<!--  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/le-frog/jquery-ui.css" /> -->
+<!--  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" /> -->
+<meta http-equiv="X-UA-Compatible" content="IE=9">
+<META http-equiv=Content-Type content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.0/themes/cupertino/jquery-ui.css" />
+<link rel="stylesheet" type="text/css" href="resources/css/p2p.css" />
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.9.0.js"></script>
+<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<title>点对点</title>
+<script>
+	$(function() {
+		$("#search-tab").tabs();
+	});
+</script>
 </head>
 <body style="margin: 0; background-color: FFFEE1">
 	<div id="top-bar"
@@ -33,35 +32,42 @@
 		</div>
 	</div>
 	<div id="body"
-		style="width: 800px; border: solid; margin-left: 30%; margin-right: auto; display: block; overflow-y: auto; height: 800px; border-width: 1px;z-index: 99">
+		style="width: 60%; border: solid; margin-left: auto; margin-right: auto; display: block; overflow-y: auto; height: 800px; border-width: 1px; z-index: 99">
 		<div id="search-tab">
 			<ul>
 				<li><a href="#tabs-1">Nunc tincidunt</a></li>
 				<li><a href="#tabs-2">Proin dolor</a></li>
 				<li><a href="#tabs-3">Aenean lacinia</a></li>
 			</ul>
-			<div id="tabs-1" style="height: 250px;font-size: 1.3em" >
-				
-					<div  id="keyword-search" class="search-div">
-						<div id="keyword-label-div" class="keyword-label-div">
-							<div class="label-text" style="border: 1px solid; height: 80%" >
-								<label>Keyword(关键字)</label>
-							</div>
-						</div>
-						
-						<div id="keyword-input-div" class="keyword-input-div">
-							<input type="text" id="country-input" style="font-size: 1.3em;width: 90%"></input>
-						</div>
-					</div>		
-					<div  id="search-from" class="search-div">
-					
+			<div id="tabs-1" style="height: 250px; font-size: 1.5em">
+			<form id="from-search-form">
+				<div id="keyword-search" class="search-div">
+					<div id="keyword-label-div" class="search-label-div">
+						<label>Keyword(关键字)</label>
+					</div>
+					<div id="keyword-input-div" class="search-input-div">
+						<input type="text" id="keyword-input"
+							style="width: 95%; border: solid 1px; "></input>
+					</div>
+				</div>
+				<div id="search-country" class="search-div">
+					<div id="search-country-label-div" class="search-label-div">
+						<label>Country From(国家)</label>
 					</div>
 					
-					<div id="search-to" class="search-div">
+						<select >
+							<option value="volvo">Australia(澳大利亚)</option>
+							<option value="saab">America(美国)</option>
+							<option value="mercedes">Canada(加拿大)</option>
+							<option value="audi">China(中国)</option>
+						</select>
 					
-					</div>	
-					
-				
+
+				</div>
+
+				<div id="search-to" class="search-div"></div>
+			</form>
+
 			</div>
 			<div id="tabs-2">
 				<p>Morbi tincidunt, dui sit amet facilisis feugiat, odio metus
@@ -101,10 +107,10 @@
 
 	</div>
 	<div id="footer"
-		style="width: 100%; height: 400px; background-color: #80BA26"></div>
+		style="width: 100%; height: 400px; background-color: rgb(239, 248, 241)"></div>
 	<script type="text/javascript">
 		$(document).ready(function() {
-			
+
 		});
 	</script>
 </body>
