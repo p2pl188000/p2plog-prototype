@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@page pageEncoding="UTF-8"%>
 <%@ page session="false"%>
 <html>
@@ -39,15 +40,15 @@
 				<li><a href="#tabs-2">Proin dolor</a></li>
 				<li><a href="#tabs-3">Aenean lacinia</a></li>
 			</ul>
-			<div id="tabs-1" style="height: 250px; font-size: 1.5em">
-			<form id="from-search-form">
+			<div id="tabs-1" style="height: 250px; font-size: 1.3em">
+			<form:form id="from-search-form" commandName="query" >
 				<div id="keyword-search" class="search-div">
 					<div id="keyword-label-div" class="search-label-div">
 						<label>Keyword(关键字)</label>
 					</div>
 					<div id="keyword-input-div" class="search-input-div">
-						<input type="text" id="keyword-input"
-							style="width: 95%; border: solid 1px; "></input>
+						<input type="text" id="keyword-input" 
+							style="width: 95%; border: solid 1px; " ></input>
 					</div>
 				</div>
 				<div id="search-country" class="search-div">
@@ -55,18 +56,15 @@
 						<label>Country From(国家)</label>
 					</div>
 					
-						<select >
-							<option value="volvo">Australia(澳大利亚)</option>
-							<option value="saab">America(美国)</option>
-							<option value="mercedes">Canada(加拿大)</option>
-							<option value="audi">China(中国)</option>
-						</select>
+						<form:select path="fromCountry">
+							<form:options items="${countryList}"/>
+						</form:select>
 					
 
 				</div>
 
 				<div id="search-to" class="search-div"></div>
-			</form>
+			</form:form>
 
 			</div>
 			<div id="tabs-2">
