@@ -13,11 +13,17 @@
 <link rel="stylesheet" type="text/css" href="resources/css/p2p.css" />
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.9.0.js"></script>
-<script src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script type="text/javascript" src="resources/jquery/jquery.multiselect.js"></script>
 <title>点对点</title>
 <script>
 	$(function() {
 		$("#search-tab").tabs();
+		$("#country-select").multiselect({
+			classes: "p2p-button p2p-select",
+			menuWidth: 100
+		});
+		
 	});
 </script>
 </head>
@@ -56,9 +62,13 @@
 						<label>Country From(国家)</label>
 					</div>
 					
-						<form:select path="fromCountry">
+					<div style="width: 300px">	  
+						<form:select path="fromCountry" id="country-select" multiple="true" cssClass="select-country">
 							<form:options items="${countryList}"/>
 						</form:select>
+					</div>	
+					
+						
 					
 
 				</div>
