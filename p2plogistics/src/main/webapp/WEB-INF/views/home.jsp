@@ -13,17 +13,28 @@
 <link rel="stylesheet" type="text/css" href="resources/css/p2p.css" />
 <script type="text/javascript"
 	src="http://code.jquery.com/jquery-1.9.0.js"></script>
-<script type="text/javascript" src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
-<script type="text/javascript" src="resources/jquery/jquery.multiselect.js"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
+<script type="text/javascript"
+	src="resources/jquery/jquery.multiselect.js"></script>
 <title>点对点</title>
 <script>
 	$(function() {
 		$("#search-tab").tabs();
 		$("#country-select").multiselect({
-			classes: "p2p-button p2p-select",
-			menuWidth: 100
-		});
-		
+			classes : "p2p-button p2p-select",
+			header: 'Select up to 2 countries(最多选两个)',
+			selectedList: 2,
+			noneSelectedText: 'Select countries (请选择国家)',
+			click: function(e){
+			       if( $(this).multiselect("widget").find("input:checked").length > 2 ){
+			           return false;
+			       } else {
+			           
+			       }
+			   }
+		}).multiselectfilter();
+
 	});
 </script>
 </head>
@@ -47,34 +58,28 @@
 				<li><a href="#tabs-3">Aenean lacinia</a></li>
 			</ul>
 			<div id="tabs-1" style="height: 250px; font-size: 1.3em">
-			<form:form id="from-search-form" commandName="query" >
-				<div id="keyword-search" class="search-div">
-					<div id="keyword-label-div" class="search-label-div">
-						<label>Keyword(关键字)</label>
+				<form:form id="from-search-form" commandName="query">
+					<div id="keyword-search" class="search-div">
+						<div id="keyword-label-div" class="search-label-div">
+							<label>Keyword(关键字)</label>
+						</div>
+						<div id="keyword-input-div" class="search-input-div">
+							<input type="text" id="keyword-input"
+								style="width: 95%; border: solid 1px;"></input>
+						</div>
 					</div>
-					<div id="keyword-input-div" class="search-input-div">
-						<input type="text" id="keyword-input" 
-							style="width: 95%; border: solid 1px; " ></input>
-					</div>
-				</div>
-				<div id="search-country" class="search-div">
-					<div id="search-country-label-div" class="search-label-div">
-						<label>Country From(国家)</label>
-					</div>
-					
-					<div style="width: 300px">	  
-						<form:select path="fromCountry" id="country-select" multiple="true" cssClass="select-country">
-							<form:options items="${countryList}"/>
+					<div id="search-country" class="search-div">
+						<div id="search-country-label-div" class="search-label-div">
+							<label>Where is the stuff(东东在哪里) ?</label>
+						</div>
+						<div id="space" style="height: 5px"></div>
+						<form:select path="fromCountry" id="country-select" 
+							multiple="true" cssClass="select-country">
+							<form:options items="${countryList}" />
 						</form:select>
-					</div>	
-					
-						
-					
-
-				</div>
-
-				<div id="search-to" class="search-div"></div>
-			</form:form>
+					</div>
+					<div id="search-to" class="search-div"></div>
+				</form:form>
 
 			</div>
 			<div id="tabs-2">
