@@ -17,13 +17,16 @@
 	src="http://code.jquery.com/ui/1.10.0/jquery-ui.js"></script>
 <script type="text/javascript"
 	src="resources/jquery/jquery.multiselect.js"></script>
+<script type="text/javascript"
+	src="resources/jquery/jquery.multiselect.filter.js"></script>	
 <title>点对点</title>
 <script>
 	$(function() {
 		$("#search-tab").tabs();
 		$("#country-select").multiselect({
 			classes : "p2p-button p2p-select",
-			header: 'Select up to 2 countries(最多选两个)',
+			header: '',
+			multiple: false,
 			selectedList: 2,
 			noneSelectedText: 'Select countries (请选择国家)',
 			click: function(e){
