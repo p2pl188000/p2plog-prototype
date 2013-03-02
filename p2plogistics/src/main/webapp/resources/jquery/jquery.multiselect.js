@@ -406,13 +406,14 @@ $.widget("ech.multiselect", {
 	_setButtonWidth: function(){
 		var width = this.element.outerWidth();
 		var o = this.options;
-		console.log('width=' + ' ' + width);
+		//console.log('width=' + ' ' + width);
 		if( /\d/.test(o.minWidth) && width < o.minWidth){
 			width = o.minWidth;
 		}
 		if( /\d/.test(o.width)){
 			width = o.width;
 		}
+		//console.log(width);
 		// set widths
 		this.button.width(width);
 	},
