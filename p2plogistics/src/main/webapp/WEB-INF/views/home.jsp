@@ -29,6 +29,7 @@
 			multiple: false,
 			selectedList: 2,
 			noneSelectedText: 'Select countries (请选择国家)',
+			width:'100%',
 			click: function(e){
 			       if( $(this).multiselect("widget").find("input:checked").length > 2 ){
 			           return false;
