@@ -43,11 +43,11 @@ public class SearchController {
 		
 		//Data referencing for java skills list box
 		Map<String,String> country = new LinkedHashMap<String,String>();
-		country.put("US", "United States(美国)");
-		country.put("CAN", "Canada(加拿大)");
-		country.put("CHINA", "China(中国)");
-		country.put("SG", "Singapore(新加坡)");
-		country.put("MY", "Malaysia(马来西亚)");
+		country.put("US", "United States");
+		country.put("CAN", "Canada");
+		country.put("CHINA", "China");
+		country.put("SG", "Singapore");
+		country.put("MY", "Malaysia");
 		
 		return country;
 	}

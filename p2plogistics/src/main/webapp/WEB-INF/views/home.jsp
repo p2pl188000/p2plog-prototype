@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>  
 <%@page pageEncoding="UTF-8"%>
 <%@ page session="false"%>
 <html>
@@ -19,28 +20,8 @@
 	src="resources/jquery/jquery.multiselect.js"></script>
 <script type="text/javascript"
 	src="resources/jquery/jquery.multiselect.filter.js"></script>	
-<title>点对点</title>
-<script>
-	$(function() {
-		$("#search-tab").tabs();
-		$("#country-select").multiselect({
-			classes : "p2p-button p2p-select",
-			header: '',
-			multiple: false,
-			selectedList: 2,
-			noneSelectedText: 'Select countries (请选择国家)',
-			width:'100%',
-			click: function(e){
-			       if( $(this).multiselect("widget").find("input:checked").length > 2 ){
-			           return false;
-			       } else {
-			           
-			       }
-			   }
-		}).multiselectfilter();
+<title><spring:message code="title"></spring:message></title>
 
-	});
-</script>
 </head>
 <body style="margin: 0; background-color: FFFEE1">
 	<div id="top-bar"
@@ -53,8 +34,7 @@
 			<div id="vertical-spacer" style="height: 19px; display: block"></div>
 		</div>
 	</div>
-	<div id="body"
-		style="width: 60%; border: solid; margin-left: auto; margin-right: auto; display: block; overflow-y: auto; height: 800px; border-width: 1px; z-index: 99">
+	<div id="body" class="app-body">
 		<div id="search-tab">
 			<ul>
 				<li><a href="#tabs-1">Nunc tincidunt</a></li>
@@ -64,25 +44,57 @@
 			<div id="tabs-1" style="height: 250px; font-size: 1.3em">
 				<form:form id="from-search-form" commandName="query">
 					<div id="keyword-search" class="search-div">
+					
 						<div id="keyword-label-div" class="search-label-div">
-							<label>Keyword(关键字)</label>
+							<label><spring:message code="key-word"></spring:message></label>
 						</div>
 						<div id="keyword-input-div" class="search-input-div">
 							<input type="text" id="keyword-input"
 								style="width: 95%; border: solid 1px;"></input>
 						</div>
+						<div class="vertical-space-medium"></div>
+						<div class="help-div" style="margin-top: 10px">
+							<img alt="h" src="resources/images/question_32.png" title="Please input you query for search.">
+						</div>
 					</div>
 					<div id="search-country" class="search-div">
 						<div id="search-country-label-div" class="search-label-div">
-							<label>Where is the stuff(东东在哪里) ?</label>
+							<label><spring:message code="where-is-stuff"></spring:message></label>
 						</div>
-						<div id="space" style="height: 5px"></div>
-						<form:select path="fromCountry" id="country-select" 
+						<div class="vertical-space-small"></div>
+						<form:select path="fromCountry" id="from-country-select" 
 							multiple="true" cssClass="select-country">
 							<form:options items="${countryList}" />
 						</form:select>
+						<div class="vertical-space-medium"></div>
+						<div class="search-label-div">
+							<label><spring:message code="where-is-city"></spring:message></label>
+						</div>
+						<div class="vertical-space-small"></div>
+						<select id="from-city-select" class="select-city" multiple="multiple">
+							<option label="city option 1" value="Sydney">Sydney</option>
+							<option label="city option 2" value="Melbourne">Melbourn</option>
+						</select>
 					</div>
-					<div id="search-to" class="search-div"></div>
+					<div id="search-to" class="search-div" >
+						<div  class="search-label-div">
+							<label><spring:message code="where-is-stuff"></spring:message></label>
+						</div>
+						<div class="vertical-space-small"></div>
+						<form:select path="fromCountry" id="to-country-select" 
+							multiple="true" cssClass="select-country">
+							<form:options items="${countryList}" />
+						</form:select>
+						<div class="vertical-space-medium"></div>
+						<div class="search-label-div">
+							<label><spring:message code="where-is-city"></spring:message></label>
+						</div>
+						<div class="vertical-space-small"></div>
+						<select id="to-city-select" class="select-city" multiple="multiple">
+							<option label="city option 1" value="Sydney">Sydney</option>
+							<option label="city option 2" value="Melbourne">Melbourn</option>
+						</select>
+					</div>
 				</form:form>
 
 			</div>
@@ -125,10 +137,9 @@
 	</div>
 	<div id="footer"
 		style="width: 100%; height: 400px; background-color: rgb(239, 248, 241)"></div>
-	<script type="text/javascript">
-		$(document).ready(function() {
-
-		});
+	<script type="text/javascript" src="resources/js/deviceDetector.js"></script>	
+	<script type="text/javascript" src="resources/js/app.js">
+		
 	</script>
 </body>
 </html>

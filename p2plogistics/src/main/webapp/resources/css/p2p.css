@@ -1,17 +1,32 @@
 @CHARSET "UTF-8";
 
+
+.app-body {
+	width: 60%; 
+	/*border: solid;*/
+	margin-left: auto; 
+	margin-right: auto;
+	display: block; 
+	overflow-y: auto; 
+	height: 800px; 
+	border-width: 1px; 
+	z-index: 99
+}
+
 .search-form {
 	
 }
 
+.search-div, .search-input-div, .search-label-div, .help-div {
+	/*border: 1px solid;*/
+}
+
 .search-label-div {	
-	border: 1px solid;
 	float:none;
 	width:100%;
 }
 
 .search-input-div {
-	border: 1px solid;
 	float:none;
 	width:100%;
 	margin-top: 5px;
@@ -20,11 +35,9 @@
 
 .search-div {
 	width: 30%;
-	border: 1px solid;
 	height: 100%;
 	float:left;
 	margin-left:10px
-		
 }
 
 .keyword-input-text {
@@ -35,6 +48,14 @@
 	margin-top: 5px;
 	width: 100%;
 	font-size: 1.2em
+}
+
+.vertical-space-small {
+	height: 5px;
+}
+
+.vertical-space-medium {
+	height: 10px;
 }
 
 .ui-multiselect { padding:2px 0 2px 4px; text-align:left }
@@ -68,4 +89,5 @@
 .p2p-button {
 	width:100%;	
 }
+
 
