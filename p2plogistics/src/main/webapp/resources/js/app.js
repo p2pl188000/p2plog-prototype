@@ -6,7 +6,6 @@ $(function() {
 				multiple: false,
 				selectedList: 2,
 				noneSelectedText: 'Select countries',
-				width:'90%',
 				click: function(e){
 				       if( $(this).multiselect("widget").find("input:checked").length > 2 ){
 				           return false;
@@ -22,7 +21,6 @@ $(function() {
 				multiple: false,
 				selectedList: 2,
 				noneSelectedText: 'Select cities',
-				width:'90%',
 				click: function(e){
 				       if( $(this).multiselect("widget").find("input:checked").length > 2 ){
 				           return false;
@@ -38,7 +36,6 @@ $(function() {
 				multiple: false,
 				selectedList: 2,
 				noneSelectedText: 'Select countries',
-				width:'90%',
 				click: function(e){
 				       if( $(this).multiselect("widget").find("input:checked").length > 2 ){
 				           return false;
@@ -54,7 +51,6 @@ $(function() {
 				multiple: false,
 				selectedList: 2,
 				noneSelectedText: 'Select cities',
-				width:'90%',
 				click: function(e){
 				       if( $(this).multiselect("widget").find("input:checked").length > 2 ){
 				           return false;
@@ -64,9 +60,24 @@ $(function() {
 				   }
 			}).multiselectfilter();
 			
+			$("#item-select").multiselect({
+				classes : "p2p-select",
+				header: '',
+				multiple: false,
+				selectedList: 2,
+				noneSelectedText: 'Select items',
+				click: function(e){
+				       if( $(this).multiselect("widget").find("input:checked").length > 2 ){
+				           return false;
+				       } else {
+				           
+				       }
+				   }
+			});
+			
 			if(P2P.deviceDetector.isIPAD()) {
 				$('.app-body').css('width',"100%");
+				$('.app-header').css('width',"100%");
 			};
 
-			
 		});

@@ -48,6 +48,19 @@ public class SearchController {
 		country.put("CHINA", "China");
 		country.put("SG", "Singapore");
 		country.put("MY", "Malaysia");
+		country.put("NZ", "New Zealand");
+		country.put("JP", "Japen");
+		country.put("Kr", "Korea");
+		country.put("Tai", "Tailand");
+		country.put("US1", "United States");
+		country.put("CAN1", "Canada");
+		country.put("CHINA1", "China");
+		country.put("SG1", "Singapore");
+		country.put("MY1", "Malaysia");
+		country.put("NZ1", "New Zealand");
+		country.put("JP1", "Japen");
+		country.put("Kr1", "Korea");
+		country.put("Tai1", "Tailand");
 		
 		return country;
 	}

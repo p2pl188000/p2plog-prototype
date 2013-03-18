@@ -28,11 +28,19 @@
 		style="width: 100%; height: 40px; background-color: #FFFFFF;">
 		<p>top-bar, language selection, login button etc.</p>
 	</div>
-	<div id="header"
-		style="width: 100%; height: 124px; background-color: rgb(239, 248, 241); position: relative; z-index: 99">
-		<div class="content">
-			<div id="vertical-spacer" style="height: 19px; display: block"></div>
+	<div id="header" class="app-header" >
+		<div class="top-menu-link" style="height: 40%;width: 100%; position:absolute;bottom: 0; ">
+			<a href="${pageContext.request.contextPath}/">
+				<img alt="dian dian service" src="${pageContext.request.contextPath}/resources/images/airplane.png" style="margin-left: 2em;border: none;">
+				<span class="ui-app-link-text">DIAN DIAN SERVICE</span>
+			</a>
+			
+			<a href="${pageContext.request.contextPath}/" style="margin-left: 15em">
+				<img alt="dian dian service" src="${pageContext.request.contextPath}/resources/images/users.png" style="margin-left: 0.5em;border: none;">
+				<span class="ui-app-link-text">CREATE AN ACCOUNT</span>
+			</a>
 		</div>
+		
 	</div>
 	<div id="body" class="app-body">
 		<div id="search-tab">
@@ -41,7 +49,7 @@
 				<li><a href="#tabs-2">Proin dolor</a></li>
 				<li><a href="#tabs-3">Aenean lacinia</a></li>
 			</ul>
-			<div id="tabs-1" style="height: 250px; font-size: 1.3em">
+			<div id="tabs-1" style="height: 220px; font-size: 1.3em">
 				<form:form id="from-search-form" commandName="query">
 					<div id="keyword-search" class="search-div">
 					
@@ -53,47 +61,60 @@
 								style="width: 95%; border: solid 1px;"></input>
 						</div>
 						<div class="vertical-space-medium"></div>
-						<div class="help-div" style="margin-top: 10px">
-							<img alt="h" src="resources/images/question_32.png" title="Please input you query for search.">
+						<div class="search-label-div">
+							<label><spring:message code="what-is-item"></spring:message></label>
 						</div>
+						<div class="vertical-space-small"></div>
+						<select id="item-select" class="search-select" multiple="multiple" >
+							<option label="city option 1" value="item1">Item 1</option>
+							<option label="city option 2" value="item2">Item 2</option>
+						</select>
+						<div class="vertical-space-small"></div>
 					</div>
+					
 					<div id="search-country" class="search-div">
 						<div id="search-country-label-div" class="search-label-div">
-							<label><spring:message code="where-is-stuff"></spring:message></label>
+							<label><spring:message code="country-from"></spring:message></label>
 						</div>
 						<div class="vertical-space-small"></div>
 						<form:select path="fromCountry" id="from-country-select" 
-							multiple="true" cssClass="select-country">
+							multiple="true" cssClass="search-select" >
 							<form:options items="${countryList}" />
 						</form:select>
 						<div class="vertical-space-medium"></div>
 						<div class="search-label-div">
-							<label><spring:message code="where-is-city"></spring:message></label>
+							<label><spring:message code="city-from"></spring:message></label>
 						</div>
 						<div class="vertical-space-small"></div>
-						<select id="from-city-select" class="select-city" multiple="multiple">
+						<select id="from-city-select" class="search-select" multiple="multiple" >
 							<option label="city option 1" value="Sydney">Sydney</option>
 							<option label="city option 2" value="Melbourne">Melbourn</option>
 						</select>
 					</div>
 					<div id="search-to" class="search-div" >
 						<div  class="search-label-div">
-							<label><spring:message code="where-is-stuff"></spring:message></label>
+							<label><spring:message code="country-to"></spring:message></label>
 						</div>
 						<div class="vertical-space-small"></div>
 						<form:select path="fromCountry" id="to-country-select" 
-							multiple="true" cssClass="select-country">
+							multiple="true" cssClass="search-select" >
 							<form:options items="${countryList}" />
 						</form:select>
 						<div class="vertical-space-medium"></div>
 						<div class="search-label-div">
-							<label><spring:message code="where-is-city"></spring:message></label>
+							<label><spring:message code="city-to"></spring:message></label>
 						</div>
 						<div class="vertical-space-small"></div>
-						<select id="to-city-select" class="select-city" multiple="multiple">
+						
+						<select id="to-city-select" class="search-select" multiple="multiple" >
 							<option label="city option 1" value="Sydney">Sydney</option>
 							<option label="city option 2" value="Melbourne">Melbourn</option>
 						</select>
+						<div class="vertical-space-medium"></div>
+						<div class="search-button" style="width: 256px; height: 50px; margin-top: 10px" >
+							<input type="submit" class="ui-button ui-widget ui-state-default ui-corner-all" style="float: right" disabled="true" value="Search">
+							<img alt="help" src="resources/images/question_32.png" title="Please input you query for search." style="float: right">
+	 					</div>
 					</div>
 				</form:form>
 
@@ -133,7 +154,6 @@
 			</div>
 
 		</div>
-
 	</div>
 	<div id="footer"
 		style="width: 100%; height: 400px; background-color: rgb(239, 248, 241)"></div>
