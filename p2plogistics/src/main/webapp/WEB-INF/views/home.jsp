@@ -32,12 +32,12 @@
 		<div class="top-menu-link" style="height: 40%;width: 100%; position:absolute;bottom: 0; ">
 			<a href="${pageContext.request.contextPath}/">
 				<img alt="dian dian service" src="${pageContext.request.contextPath}/resources/images/airplane.png" style="margin-left: 2em;border: none;">
-				<span class="ui-app-link-text">DIAN DIAN SERVICE</span>
+				<span class="ui-app-link-text">SERVICE</span>
 			</a>
 			
-			<a href="${pageContext.request.contextPath}/" style="margin-left: 15em">
+			<a href="${pageContext.request.contextPath}/" style="margin-left: 8em">
 				<img alt="dian dian service" src="${pageContext.request.contextPath}/resources/images/users.png" style="margin-left: 0.5em;border: none;">
-				<span class="ui-app-link-text">CREATE AN ACCOUNT</span>
+				<span class="ui-app-link-text">User Forum</span>
 			</a>
 		</div>
 		
@@ -71,7 +71,7 @@
 						</select>
 						<div class="vertical-space-small"></div>
 					</div>
-					
+					<!-- country from selection list -->
 					<div id="search-country" class="search-div">
 						<div id="search-country-label-div" class="search-label-div">
 							<label><spring:message code="country-from"></spring:message></label>
@@ -79,26 +79,26 @@
 						<div class="vertical-space-small"></div>
 						<form:select path="fromCountry" id="from-country-select" 
 							multiple="true" cssClass="search-select" >
-							<form:options items="${countryList}" />
+							<form:options items="${countryList}" itemValue="countryId" itemLabel="countryName"/>
 						</form:select>
 						<div class="vertical-space-medium"></div>
 						<div class="search-label-div">
 							<label><spring:message code="city-from"></spring:message></label>
 						</div>
 						<div class="vertical-space-small"></div>
-						<select id="from-city-select" class="search-select" multiple="multiple" >
+						<form:select id="from-city-select" cssClass="search-select" multiple="multiple" path="fromCity">
 							<option label="city option 1" value="Sydney">Sydney</option>
 							<option label="city option 2" value="Melbourne">Melbourn</option>
-						</select>
+						</form:select>
 					</div>
 					<div id="search-to" class="search-div" >
 						<div  class="search-label-div">
 							<label><spring:message code="country-to"></spring:message></label>
 						</div>
 						<div class="vertical-space-small"></div>
-						<form:select path="fromCountry" id="to-country-select" 
+						<form:select path="toCountry" id="destination-country-select" 
 							multiple="true" cssClass="search-select" >
-							<form:options items="${countryList}" />
+							<form:options items="${countryList}" itemValue="countryId" itemLabel="countryName"/>
 						</form:select>
 						<div class="vertical-space-medium"></div>
 						<div class="search-label-div">
@@ -112,8 +112,7 @@
 						</select>
 						<div class="vertical-space-medium"></div>
 						<div class="search-button" style="width: 256px; height: 50px; margin-top: 10px" >
-							<input type="submit" class="ui-button ui-widget ui-state-default ui-corner-all" style="float: right" disabled="true" value="Search">
-							<img alt="help" src="resources/images/question_32.png" title="Please input you query for search." style="float: right">
+							<input type="submit" class="ui-button ui-widget ui-state-default ui-corner-all" style="float: right" value="Search" disabled="true">
 	 					</div>
 					</div>
 				</form:form>

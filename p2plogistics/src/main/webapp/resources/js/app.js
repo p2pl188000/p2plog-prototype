@@ -30,7 +30,7 @@ $(function() {
 				   }
 			}).multiselectfilter();
 			
-			$("#to-country-select").multiselect({
+			$("#destination-country-select").multiselect({
 				classes : "p2p-button p2p-select",
 				header: '',
 				multiple: false,
@@ -62,12 +62,11 @@ $(function() {
 			
 			$("#item-select").multiselect({
 				classes : "p2p-select",
-				header: '',
-				multiple: false,
+				multiple: true,
 				selectedList: 2,
 				noneSelectedText: 'Select items',
 				click: function(e){
-				       if( $(this).multiselect("widget").find("input:checked").length > 2 ){
+				       if( $(this).multiselect("widget").find("input:checked").length > 10 ){
 				           return false;
 				       } else {
 				           

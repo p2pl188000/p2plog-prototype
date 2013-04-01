@@ -1,9 +1,7 @@
 package com.au.p2p;
 
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,42 +25,25 @@ public class SearchController {
 	@Autowired
 	private CountryService countryService;
 	
+	@Autowired
+	private CityService cityService;
+	
+	@Autowired
+	private IQuery fromQuery;
+	
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String init(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
-		SearchFromQuery query = new SearchFromQuery();
-		model.addAttribute("query", query);
+		model.addAttribute("query", fromQuery);
 		return "home";
 	}
 	
 	@ModelAttribute("countryList")
-	public Map<String,String> populateCountryList() {
-		
-		//Data referencing for java skills list box
-		Map<String,String> country = new LinkedHashMap<String,String>();
-		country.put("US", "United States");
-		country.put("CAN", "Canada");
-		country.put("CHINA", "China");
-		country.put("SG", "Singapore");
-		country.put("MY", "Malaysia");
-		country.put("NZ", "New Zealand");
-		country.put("JP", "Japen");
-		country.put("Kr", "Korea");
-		country.put("Tai", "Tailand");
-		country.put("US1", "United States");
-		country.put("CAN1", "Canada");
-		country.put("CHINA1", "China");
-		country.put("SG1", "Singapore");
-		country.put("MY1", "Malaysia");
-		country.put("NZ1", "New Zealand");
-		country.put("JP1", "Japen");
-		country.put("Kr1", "Korea");
-		country.put("Tai1", "Tailand");
-		
-		return country;
+	public List<Country> populateCountryList() {
+		return countryService.getAllContries();
 	}
 	
 }
